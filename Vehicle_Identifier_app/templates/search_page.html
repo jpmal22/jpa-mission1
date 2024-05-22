@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Quote</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="title" href="#">Vehicle Identifier</a>
+            <div class="nav-buttons">
+                <a class="btn" href="{% url 'index' %}">Home</a>
+                <a class="btn" href="{% url 'search_page' %}">Search</a>
+            </div>
+        </div>
+    </nav>
+    <div class="search-content">
+        <h1 class="search-title">Search for a Previous Quote</h1>
+        <div class="search-form">
+            <form method="get" action="{% url 'search' %}">
+                <label for="reference_number">Enter Reference Number:</label>
+                <input type="text" id="reference_number" name="reference_number" required>
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

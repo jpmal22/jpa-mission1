@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reference Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="title" href="#">Vehicle Identifier</a>
+            <div class="nav-buttons">
+                <a class="btn" href="{% url 'index' %}">Home</a>
+                <a class="btn" href="{% url 'search_page' %}">Search</a>
+            </div>
+        </div>
+    </nav>
+    <div class="reference-content">
+        {% if vehicle_image %}
+            <h2 class="reference-title">Vehicle Details</h2>
+            <div class="vehicle-details">
+                <img src="{{ vehicle_image.image.url }}" alt="Car Image" class="vehicle-image">
+                <p>Vehicle Type: {{ vehicle_image.vehicle_type }}</p>
+                <p>Age: {{ vehicle_image.age }}</p>
+                <p>City: {{ vehicle_image.city }}</p>
+                <p>Reference Number: {{ vehicle_image.reference_number }}</p>
+                <p>Insurance Price per Annum: ${{ vehicle_image.insurance_price }}</p>
+            </div>
+        {% elif error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Identifier</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="title" href="#">Vehicle Identifier</a>
+            <div class="nav-buttons">
+                <a class="btn" href="{% url 'index' %}">Home</a>
+                <a class="btn" href="{% url 'search_page' %}">Search</a>
+            </div>
+        </div>
+    </nav>
+    <div class="upload-content">
+        <h1 class="upload-title">Upload a Vehicle Image</h1>
+        <div class="upload-form">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

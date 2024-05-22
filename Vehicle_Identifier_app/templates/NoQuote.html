@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote Not Found</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="title" href="#">Vehicle Identifier</a>
+            <div class="nav-buttons">
+                <a class="btn" href="{% url 'index' %}">Home</a>
+                <a class="btn" href="{% url 'search_page' %}">Search</a>
+            </div>
+        </div>
+    </nav>
+    <div class="noquote-content">
+        <h2>Quote Not Found</h2>
+        <p>The reference number you entered does not exist.</p>
+        <p>Please return to the Search page to try again.</p>
+    </div>
+</body>
+</html>
